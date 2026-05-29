@@ -28,31 +28,46 @@
     <nav class="navbar">
       <a href="#inicio"><span style="color: #EF000e;">I</span>nicio</a>
       <a href="#projetos"><span style="color: #EF000e;">E</span>xperiencia</a>
+      <a href="#cursos"><span style="color: #EF000e;">C</span>ursos</a>
       <a href="#sobre"><span style="color: #EF000e;">F</span>ormação</a>
       <a href="#contato"><span style="color: #EF000e;">C</span>ontato</a>
     </nav>
 
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger" id="hamburgerBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-header">
+        <button class="close-btn" id="closeBtn">✕</button>
+      </div>
+      <a href="#inicio" class="mobile-link"><span style="color: #EF000e;">I</span>nicio</a>
+      <a href="#projetos" class="mobile-link"><span style="color: #EF000e;">E</span>xperiencia</a>
+      <a href="#cursos" class="mobile-link"><span style="color: #EF000e;">C</span>ursos</a>
+      <a href="#sobre" class="mobile-link"><span style="color: #EF000e;">F</span>ormação</a>
+      <a href="#contato" class="mobile-link"><span style="color: #EF000e;">C</span>ontato</a>
+    </nav>
+
   </header>
 
-  <main>
-
-    <!-- HERO -->
+  <main class="main">
 
     <section class="hero" id="inicio">
 
       <div class="apresentation container py-5">
         <h1>Ola, eu sou</h1>
-<img src="assets/img/Paulo.png" alt="Foto de Paulo Henrique" class="persona-img mb-3">
-
+        <img src="assets/img/Paulo.png" alt="Foto de Paulo Henrique" class="persona-img mb-3 img-fluid">
       </div>
 
       <div class="hero-content">
 
         <div class="hero-left">
 
-          <span class="tag">PERSONA STYLE PORTFOLIO</span>
-
-
+        
 
           <p>
             Estudante de Desenvolvimento de Software Multiplataforma com foco em
@@ -66,21 +81,17 @@
 
         </div>
 
-
-
       </div>
 
     </section>
 
-    <!-- PROJETOS -->
-
-    <section class="projects-section bg-black justify-content-center " id="projetos ">
-      <div class="d-flex align-items-center gap-3 py-5">
-        <img height="200px" src="assets/img/exclamacao.png" alt="Foto de exclamação" class="align-items-center ">
+    <section class="projects-section bg-black justify-content-center " id="projetos">
+      <div class="d-flex flex-wrap align-items-center gap-3 py-5 section-header-container">
+        <img height="200px" src="assets/img/exclamacao.png" alt="Foto de exclamação" class="align-items-center img-fluid title-icon">
         <div class="section-title">
           <span>02</span>
           <h2>EXPERIENCIA</h2>
-          <hr style="font-size: 2px; width: 350px; border: 3px solid #000000; margin-top: 10px;">
+          <hr class="section-divider">
         </div>
       </div>
       <div class="links d-flex justify-content-center gap-4 mb-5 align-items-center color-white">
@@ -100,67 +111,73 @@
         </a>
       </div>
 
-
-
       <div class="projects-grid">
 
-    
-
         <article class="project-card rotate-right">
-
           <span class="project-number">02</span>
-
           <h3>Site Responsivo</h3>
-
           <p>
             Desenvolvimento de interface responsiva focada em experiência
             visual e adaptação mobile.
           </p>
-
           <a href="#">VER MAIS</a>
-
         </article>
 
         <article class="project-card rotate-left">
-
           <span class="project-number">03</span>
-
           <h3>Sistema Web</h3>
-
           <p>
             Projeto acadêmico com integração de banco de dados e estrutura
             de navegação dinâmica.
           </p>
-
           <a href="#">VER MAIS</a>
-
         </article>
 
       </div>
 
     </section>
 
-    <!-- SOBRE -->
-
-    <section class="about-section" id="sobre">
-
-      <div class="d-flex align-items-center gap-3 py-5 mb-5">
-        <img height="200px" src="assets/img/A+.png" alt="Foto de exclamação" class="exclamacao-card">
+    <section class="courses-section" id="cursos">
+      <div class="d-flex flex-wrap align-items-center gap-3 py-5 section-header-container">
         <div class="section-title">
-
           <span>03</span>
-          <h2>Formacao Academica</h2>
-            <hr style="font-size: 2px; width: 350px; border: 3px solid #000000; margin-top: 10px;">
+          <h2>CURSOS</h2>
+          <hr class="section-divider">
         </div>
       </div>
 
-      <div class="about-content d-flex align-items-center mb-5 mt-5 gap-5">
-        <div class="about-box gap-4">
+      <div class="courses-content d-flex flex-wrap align-items-start gap-4 mb-5">
+        <article class="course-card">
+          <h3>Basico de Logica de Programação</h3>
+         
+        </article>
+        <article class="course-card">
+          <h3>Curso de C#</h3>
+          
+        </article>
+         <article class="course-card">
+          <h3>Curso de HTML, CSS e JavaScript</h3>
+    
+        </article>
+      </div>
+    </section>
 
+    <section class="about-section" id="sobre">
+
+      <div class="d-flex flex-wrap align-items-center gap-3 py-5 mb-5 section-header-container">
+        <img height="200px" src="assets/img/A+.png" alt="Foto de exclamação" class="exclamacao-card img-fluid title-icon">
+        <div class="section-title">
+          <span>04</span>
+          <h2>Formacao Academica</h2>
+          <hr class="section-divider">
+        </div>
+      </div>
+
+      <div class="about-content d-flex flex-wrap align-items-center mb-5 mt-5 gap-5">
+        <div class="about-box gap-4">
          <h2>
            Ensino Médio Completo - E.E. Geraldo Pereira de Barros (2023-2025)
          </h2>
-
           <p>
             Concluí o Ensino Médio na E.E. Geraldo Pereira de Barros, em Barra Bonita,
             uma escola estadual reconhecida pelo ambiente colaborativo e pelo foco na
@@ -168,19 +185,15 @@
             por tecnologia, lógica e comunicação, e participei de atividades que
             fortaleceram meu perfil analítico.
           </p>
-
         </div>
-        <img height="250px" src="assets/img/estrelasCard.png" alt="Foto de estrelas" class="estrelas-card">
+        
       </div>
       
-      
-      <div class="about-content d-flex align-items-center mb-5 mt-5 gap-5">
+      <div class="about-content d-flex flex-wrap align-items-center mb-5 mt-5 gap-5">
         <div class="about-box gap-4">
-
           <h2>
           Cursando Ensino Técnico em Desenvolvimento de Sistemas - ETEC Barra Bonita (2025-2026)
-         </h2>
-          
+          </h2>
           <p>
             No Técnico em Desenvolvimento de Sistemas da ETEC Barra Bonita, tenho
             aulas práticas de programação, banco de dados, redes e desenvolvimento
@@ -189,19 +202,14 @@
             software voltados para o mercado local.
           </p>
         </div>
-        <img height="250px" src="assets/img/estrelasCard.png" alt="Foto de estrelas" class="estrelas-card">
-      </div>
         
+      </div>
       
-      
-      
-      <div class="about-content d-flex align-items-center mb-5 mt-5 gap-5">
+      <div class="about-content d-flex flex-wrap align-items-center mb-5 mt-5 gap-5">
         <div class="about-box gap-4">
-
           <h2>
           Cursando Faculdade de Tecnologia em Desenvolvimento de Software Multiplataforma - FATEC Jahu (2026-2029)
-         </h2>
-
+          </h2>
           <p>
             Na FATEC Jahu, o curso de Desenvolvimento de Software Multiplataforma
             foca em criar aplicações para web, mobile e desktop. Estou aprendendo
@@ -209,28 +217,25 @@
             entre diferentes plataformas, além de fortalecer a base para trabalhar
             com projetos mais complexos e colaborativos.
           </p>
-
         </div>
-        <img height="250px" src="assets/img/estrelasCard.png" alt="Foto de estrelas" class="estrelas-card">
+        
       </div>
 
     </section>
 
-    <!-- CONTATO -->
+    <section class="contact-section bg-black" id="contato">
 
-    <section class="contact-section bg-black  " id="contato">
-
-      <div class="d-flex align-items-center gap-3 py-5">
-        <img height="200px" src="assets/img/conversa.png" alt="Foto de conversa" class="c-card">
+      <div class="d-flex flex-wrap align-items-center gap-3 py-5 section-header-container">
+        <img height="200px" src="assets/img/conversa.png" alt="Foto de conversa" class="c-card img-fluid title-icon">
         <div class="section-title">
-          <span>04</span>
+          <span>05</span>
           <h2>CONTATO</h2>
-            <hr style="font-size: 2px; width: 350px; border: 3px solid #000000; margin-top: 10px;">
+          <hr class="section-divider">
         </div>
       </div>
 
-      <div class="d-flex align-items-center gap-5 mb-5 mt-5 gap-5 ">
-        <div class="contact-box d-flex align-items-center gap-4 ">
+      <div class="d-flex flex-wrap align-items-center gap-5 mb-5 mt-5">
+        <div class="contact-box d-flex align-items-center gap-4">
           <a href="#">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-github"
               viewBox="0 0 16 16">
@@ -253,11 +258,47 @@
             </svg>
           </a>
         </div>
-        <img height="150px" src="assets/img/persona.png" alt="Foto de estrelas" class="p5cc-card">
+        <img height="150px" src="assets/img/persona.png" alt="Foto de estrelas" class="p5cc-card img-fluid section-side-img">
       </div>
     </section>
 
   </main>
+
+  <script>
+    // Hamburger Menu
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeBtn = document.getElementById('closeBtn');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    // Abrir/Fechar menu
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+
+    // Fechar menu ao clicar no botão X
+    closeBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    });
+
+    // Fechar menu ao clicar em um link
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburgerBtn.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // Fechar menu ao clicar fora dele
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.header') && mobileMenu.classList.contains('active')) {
+        hamburgerBtn.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      }
+    });
+  </script>
 
 </body>
 

@@ -30,10 +30,11 @@ body {
     linear-gradient(to bottom right, #E90004, #000000);
   background-repeat: no-repeat;
  
-  background-size: cover;
+  background-size: cover,cover;
   color: #ffffff;
   color-scheme: dark;
   font-family: 'Markin', sans-serif;
+  overflow-x: hidden; /* Evita qualquer vazamento horizontal indesejado */
 }
 
 /* NOISE */
@@ -118,6 +119,119 @@ body {
     color: #E90004;
 }
 
+/* HAMBURGER MENU */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    padding: 0;
+    width: 40px;
+    height: 30px;
+    justify-content: space-around;
+
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: 0.3s ease;
+    display: block;
+    z-index: 1;
+}
+
+.hamburger.active span:nth-child(1) {
+    background: white;
+    z-index: 1;
+}
+
+.hamburger.active span:nth-child(2) {
+    background: rgb(255, 255, 255);
+    z-index: 1;
+}
+
+.hamburger.active span:nth-child(3) {
+    background: white;
+    z-index: 1;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 999;
+    flex-direction: column;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    gap: 0;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu.active {
+    display: flex;
+    z-index: 1000;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobile-menu-header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.close-btn:hover {
+    color: #E90004;
+}
+
+.mobile-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-family: 'Persona';
+    padding: 20px 10%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.2s;
+    display: block;
+    text-transform: uppercase;
+}
+
+.mobile-link:hover {
+    background: rgba(233, 0, 4, 0.15);
+    color: #E90004;
+}
+
+.mobile-link span {
+    color: #E90004;
+    font-weight: bold;
+}
+
 /* HERO */
 
 .hero {
@@ -128,6 +242,9 @@ body {
 
     padding: 140px 10%;
     position: relative;
+    flex-wrap: wrap; /* Permite que os blocos internos quebrem linha */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .hero-bg-text {
@@ -155,6 +272,8 @@ body {
     gap: 60px;
 
     z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .hero-left {
@@ -271,6 +390,9 @@ body {
 
 section {
     padding: 120px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
 }
 
 /* TITULOS */
@@ -281,13 +403,23 @@ section {
     position: relative;
 }
 .p5cc-card{
-    position: absolute;
-    right:110px;
-    
+    position: relative;
+    right: auto;
+    max-width: 220px;
+    max-height: 220px;
+    width: auto;
 }
 
 .bg-black {
     background: rgba(0, 0, 0, 0.925) !important;
+    position: relative;
+    width: 100vw;
+    max-width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 .section-title span {
     position: absolute;
@@ -295,7 +427,7 @@ section {
     top: -60px;
     left: 0;
 
-    font-size: 7rem;
+    font-size: 5.5rem;
 
     color: rgba(255,255,255,0.06);
 
@@ -303,13 +435,28 @@ section {
 }
 
 .section-title h2 {
-    font-size: 4rem;
+    font-size: 3rem;
 
     font-family: 'Persona';
 
     position: relative;
 
     z-index: 2;
+}
+
+.section-title hr {
+    width: min(90%, 300px);
+    max-width: 100%;
+    margin: 10px auto 0;
+    border: none;
+    height: 3px;
+    background: #000;
+    opacity: 1;
+}
+
+.title-icon {
+    height: auto;
+    max-width: 180px;
 }
 
 /* PROJETOS */
@@ -332,7 +479,7 @@ section {
 
     border: 3px solid white;
 
-    padding: 40px;
+    padding: 30px;
 
     position: relative;
 
@@ -398,6 +545,41 @@ section {
     transform: skew(-10deg);
 }
 
+.courses-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 320px);
+    gap: 30px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.course-card {
+    background: rgba(0, 0, 0, 0.89);
+    border: 3px solid white;
+    padding: 30px;
+    box-shadow: 10px 10px 0 #E90004;
+    width: 320px;
+    height: 240px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.course-card h3 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: #E90004;
+    font-family: 'Persona';
+    text-align: center;
+}
+
+.course-card p {
+    line-height: 1.7;
+}
+
 /* SOBRE */
 
 .about-box {
@@ -405,7 +587,7 @@ section {
 
     border-left: 6px solid #E90004;
 
-    padding: 50px;
+    padding: 40px;
 
     max-width: 900px;
 
@@ -420,13 +602,9 @@ section {
 
 .estrelas-card{
      position: relative;
-     right:110px;
-
-   
-
-
-
-    
+     right: auto;
+     max-width: 220px;
+     max-height: 220px;
 }
 
 /* CONTATO */
@@ -439,7 +617,6 @@ section {
 }
 
 .contact-box a {
-    
     text-decoration: none;
 
     color: white;
@@ -457,39 +634,282 @@ section {
     box-shadow: 8px 8px 0 #E90004;
 }
 
-
-
 .contact-box a:hover {
     background: #E90004;
 }
 
-/* RESPONSIVO */
+.contact-section {
+    position: relative;
+}
+
+.contact-section .p5cc-card {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 260px;
+    max-height: 260px;
+    width: auto;
+}
+
+a {
+    color: white;
+}
+
+/* ==========================================================
+   MEDIA QUERIES - RESPONSIVIDADE CORRIGIDA (SEM ALTERAR O VISUAL)
+   ========================================================== */
+
+@media (max-width: 1200px) {
+    .header {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 0;
+        position: static;
+        transform: none;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .logo-box,
+    .navbar {
+        width: auto;
+    }
+
+    .navbar {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-left: 0;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+
+    .project-card,
+    .about-box,
+    .contact-box {
+        min-width: 0;
+    }
+}
 
 @media (max-width: 950px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding-top: 20px;
+    }
+
+    .logo-box {
+        margin: 0 auto;
+    }
+
+    .navbar {
+        padding: 10px 16px;
+        margin: 0 auto;
+    }
+
+    .hero {
+        padding: 40px 5% 60px;
+        flex-direction: column;
+        justify-content: center;
+    }
 
     .hero-content {
         flex-direction: column;
+        gap: 30px;
+    }
+
+    .hero-left {
+        max-width: 100%;
+        text-align: center;
     }
 
     .hero h1 {
-        font-size: 4rem;
+        font-size: clamp(2.2rem, 8vw, 3.5rem);
     }
 
-    .image-box {
-        width: 280px;
-        height: 360px;
+    .hero p {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section-header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .title-icon {
+        height: auto;
+        max-width: 150px;
+    }
+
+    .section-title {
+        margin-bottom: 40px;
+        width: 100%;
+    }
+
+    .section-title span {
+        font-size: 4.5rem;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .section-title h2 {
+        font-size: 2.4rem;
+        text-align: center;
+    }
+
+    .projects-grid {
+        gap: 24px;
+    }
+
+    .project-card {
+        padding: 30px;
+    }
+
+    .course-card h3 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .project-number {
+        top: 10px;
+        right: 16px;
+        font-size: 3.2rem;
+    }
+
+    .about-box {
+        width: 100%;
+        max-width: 100%;
+        padding: 30px;
+    }
+
+    .section-side-img, .p5cc-card, .estrelas-card {
+        position: relative;
+        right: auto;
+        left: auto;
+        margin: 20px auto 0 auto;
+        display: block;
+        max-height: 180px;
+    }
+
+    .contact-section .p5cc-card {
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+        transform: none;
+        margin: 20px auto 0 auto;
+        width: auto;
+        max-width: 180px;
+    }
+
+    .estrelas-card{
+     display: none;
+}
+}
+
+@media (max-width: 700px) {
+    body {
+        background-position: top center;
+    }
+
+    .hamburger {
+        display: flex;
     }
 
     .navbar {
         display: none;
     }
 
-    .section-title h2 {
-        font-size: 3rem;
+    .courses-content {
+        grid-template-columns: 1fr;
+        justify-content: stretch;
     }
 
-}
+    .course-card {
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+    }
 
-a{
-    color: white;
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .section-title span {
+        font-size: 3.5rem;
+        top: -35px;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .section-title hr {
+        width: min(90%, 280px);
+    }
+
+    .navbar {
+        gap: 10px;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+
+    section {
+        padding: 50px 5%;
+    }
+
+    .tag {
+        font-size: 0.8rem;
+        padding: 8px 14px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 18px;
+    }
+
+    .project-card {
+        padding: 28px;
+    }
+
+    .about-box {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .contact-box {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .contact-box a {
+        width: 100%;
+        padding: 18px 20px;
+        text-align: center;
+    }
+
+    .course-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        text-align: center;
+    }
 }
